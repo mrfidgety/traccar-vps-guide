@@ -59,3 +59,29 @@ exit
 # restart postgres
 sudo systemctl restart postgresql
 ```
+
+#### Part Two - Installing the Traccar server
+```
+# download the traccar zip file
+sudo wget https://www.traccar.org/download/traccar-linux-64-latest.zip
+
+# unzip the traccar file
+sudo unzip traccar-linux-*.zip
+
+# run the traccar installer
+sudo ./traccar.run
+
+# open the traccar config
+sudo vi /opt/traccar/conf/traccar.xml
+
+# replace the <entry> lines with the following, but using the postgres database password you set earlier
+# you can delete the entire line under your text cursor in vim by pressing "dd"
+# you can paste this into vim by right clicking and selecting "paste"
+<entry key='database.driver'>org.postgresql.Driver</entry>
+<entry key='database.url'>jdbc:postgresql://localhost/traccar</entry>
+<entry key='database.user'>postgres</entry>
+<entry key='database.password'>yourpasswordhere</entry>
+
+# start the traccar service
+sudo service traccar start
+```
