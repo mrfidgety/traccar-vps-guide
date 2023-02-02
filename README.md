@@ -4,9 +4,16 @@ This guide will instruct you on how to install [Traccar](https://www.traccar.org
 
 ## How to install Traccar server on an Amazon Lightsail VPS
 
+
+#### Part One - Creating a VPS instance
+
+When logged in to AWS, navigate to the 'Lightsail' service by using the search. From there you should be able to create a new instance. When creating an instance, select the Linux/Unix platform and the 'OS Only' Amazon Linux 2 option. Then scroll down and choose the lowest cost instance plan. It is a good idea to rename your instance to something like "TraccarServer". Then click Create instance.
+
+Give it a minute or two for your instance to fire up.
+
 Open a terminal on your VPS instance. You can simply click 'connect' from the Lightsail browser interface to achieve this. Enter the following commands one at a time. Do not enter the lines starting with `#` as those are comments explaining what each command does.
 
-#### Part One - Setting up the database
+#### Part Two - Setting up the database
 ```
 # "enable" postgres, our database engine
 sudo amazon-linux-extras enable postgresql13
@@ -60,7 +67,7 @@ exit
 sudo systemctl restart postgresql
 ```
 
-#### Part Two - Installing the Traccar server
+#### Part Three - Installing the Traccar server
 ```
 # download the traccar zip file
 sudo wget https://www.traccar.org/download/traccar-linux-64-latest.zip
