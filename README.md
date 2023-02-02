@@ -10,7 +10,7 @@ You will need:
 - A Traccar account. The signup is not obvious on their home page, but is available at https://www.traccar.org/register/
 
 
-#### Part One: Creating a VPS instance
+### Part One: Creating a VPS instance
 
 When logged in to AWS, navigate to the 'Lightsail' service by using the search on the top left.
 From there you should be able to create a new instance.
@@ -25,7 +25,7 @@ Click 'Create instance'.
 
 Give it a minute or two for your web server to come to life.
 
-#### Part Two: Setting up the database
+### Part Two: Setting up the database
 
 Open a terminal on your VPS instance. There will be a button in the Lightsail interface that allows you to do this.
 It will be labelled something like 'connect' or 'terminal'.
@@ -104,7 +104,7 @@ exit
 sudo systemctl restart postgresql
 ```
 
-#### Part Three: Installing the Traccar server
+### Part Three: Installing the Traccar server
 ```
 # Download the traccar zip file to your server.
 sudo wget https://www.traccar.org/download/traccar-linux-64-latest.zip
@@ -145,7 +145,7 @@ sudo vi /opt/traccar/conf/traccar.xml
 sudo service traccar start
 ```
 
-#### Part Four: Accessing your Traccar web interface
+### Part Four: Accessing your Traccar web interface
 
 Traccar is now installed and running on your VPS.
 There are is one last thing to do before we can access it in the browser.
@@ -176,7 +176,7 @@ You can happily tell your browser to ignore/continue as this is YOUR site.
 The default login will be username: admin, password: admin
 The first thing you should do is change this account to have a username that is yours and password that is secure.
 
-#### Conclusion
+### Conclusion
 
 You can now install the iOS or Android "Traccar Manager" app.
 
